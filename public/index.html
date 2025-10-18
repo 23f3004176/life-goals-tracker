@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Life Goals Tracker - Transform your dreams into achievable milestones. Track and achieve your personal and professional goals with our comprehensive goal management application.">
+  <meta name="keywords" content="goal tracker, life goals, personal development, productivity, goal management, achievement tracking">
+  <meta name="author" content="Life Goals Tracker">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Life Goals Tracker - Transform Your Dreams Into Reality">
+  <meta property="og:description" content="A comprehensive goal tracking application to help you set, track, and achieve your personal and professional goals.">
+  <meta property="og:image" content="https://raw.githubusercontent.com/23f3004176/life-goals-tracker/main/public/og-image.png">
+  <meta property="og:url" content="https://life-goals-tracker.vercel.app">
+  <meta property="og:type" content="website">
+  
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Life Goals Tracker - Transform Your Dreams Into Reality">
+  <meta name="twitter:description" content="A comprehensive goal tracking application to help you set, track, and achieve your personal and professional goals.">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/23f3004176/life-goals-tracker/main/public/og-image.png">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/logo.svg">
+  
+  <title>Life Goals Tracker - Transform Your Dreams Into Achievable Milestones</title>
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .container {
+      text-align: center;
+      max-width: 800px;
+      animation: fadeIn 1s ease-in;
+    }
+    
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .logo {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto 30px;
+      filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.3));
+      animation: float 3s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+    
+    h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    .tagline {
+      font-size: 1.5rem;
+      margin-bottom: 30px;
+      opacity: 0.95;
+    }
+    
+    .description {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      opacity: 0.9;
+    }
+    
+    .buttons {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    .btn {
+      padding: 15px 40px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .btn-primary {
+      background: white;
+      color: #667eea;
+    }
+    
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    }
+    
+    .btn-secondary {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      backdrop-filter: blur(10px);
+    }
+    
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-2px);
+    }
+    
+    .features {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 30px;
+    }
+    
+    .feature {
+      background: rgba(255, 255, 255, 0.1);
+      padding: 30px 20px;
+      border-radius: 15px;
+      backdrop-filter: blur(10px);
+      transition: transform 0.3s ease;
+    }
+    
+    .feature:hover {
+      transform: translateY(-5px);
+    }
+    
+    .feature-icon {
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+    
+    .feature h3 {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .feature p {
+      opacity: 0.9;
+      font-size: 0.95rem;
+    }
+    
+    footer {
+      margin-top: 60px;
+      opacity: 0.8;
+      font-size: 0.9rem;
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2rem;
+      }
+      
+      .tagline {
+        font-size: 1.2rem;
+      }
+      
+      .description {
+        font-size: 1rem;
+      }
+      
+      .buttons {
+        flex-direction: column;
+      }
+      
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="logo.svg" alt="Life Goals Tracker Logo" class="logo" id="logo">
+    
+    <h1>🎯 Life Goals Tracker</h1>
+    <p class="tagline">Transform your dreams into achievable milestones</p>
+    
+    <p class="description">
+      A comprehensive goal tracking application designed to help you set, track, and achieve your personal and professional goals. 
+      Stay motivated, organized, and on track to become the best version of yourself.
+    </p>
+    
+    <div class="buttons">
+      <a href="https://life-goals-tracker.vercel.app" class="btn btn-primary">Launch App</a>
+      <a href="https://github.com/23f3004176/life-goals-tracker" class="btn btn-secondary">View on GitHub</a>
+    </div>
+    
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">🎯</div>
+        <h3>Goal Tracking</h3>
+        <p>Create and manage your goals with detailed progress tracking</p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">📈</div>
+        <h3>Progress Analytics</h3>
+        <p>Visualize your progress with intuitive charts and insights</p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure & Private</h3>
+        <p>Your data is protected with Firebase authentication</p>
+      </div>
+      
+      <div class="feature">
+        <div class="feature-icon">📱</div>
+        <h3>Responsive Design</h3>
+        <p>Access your goals from any device, anywhere</p>
+      </div>
+    </div>
+    
+    <footer>
+      <p>&copy; 2025 Life Goals Tracker. Made with ❤️ by developers, for dreamers.</p>
+    </footer>
+  </div>
+  
+  <script>
+    // Add some interactivity
+    document.addEventListener('DOMContentLoaded', function() {
+      const logo = document.getElementById('logo');
+      
+      // If logo.svg doesn't exist, create a default SVG
+      logo.onerror = function() {
+        this.style.display = 'none';
+      };
+    });
+  </script>
+</body>
+</html>
