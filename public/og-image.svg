@@ -1,0 +1,113 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)"/>
+  
+  <!-- Decorative Pattern -->
+  <g opacity="0.1">
+    <circle cx="100" cy="100" r="60" fill="white"/>
+    <circle cx="1100" cy="530" r="80" fill="white"/>
+    <circle cx="200" cy="500" r="40" fill="white"/>
+    <circle cx="1000" cy="100" r="50" fill="white"/>
+  </g>
+  
+  <!-- Logo Section -->
+  <g transform="translate(150, 200)">
+    <!-- Target Symbol -->
+    <circle cx="0" cy="0" r="120" fill="none" stroke="white" stroke-width="6" opacity="0.9"/>
+    <circle cx="0" cy="0" r="85" fill="none" stroke="white" stroke-width="6" opacity="0.9"/>
+    <circle cx="0" cy="0" r="50" fill="none" stroke="url(#accentGrad)" stroke-width="6"/>
+    
+    <!-- Center Bullseye -->
+    <circle cx="0" cy="0" r="25" fill="url(#accentGrad)"/>
+    
+    <!-- Arrow -->
+    <g transform="translate(0, -80) rotate(0, 0, 0)">
+      <rect x="-4" y="0" width="8" height="70" fill="url(#accentGrad)" rx="3"/>
+      <path d="M 0,-18 L 14,0 L 0,5 L -14,0 Z" fill="url(#accentGrad)"/>
+    </g>
+    
+    <!-- Checkmark -->
+    <path d="M -10,5 L -3,15 L 15,-15" fill="none" stroke="white" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Text Content -->
+  <g filter="url(#shadow)">
+    <!-- Main Title -->
+    <text x="400" y="200" font-family="Arial, sans-serif" font-size="72" font-weight="bold" fill="white">
+      🎯 Life Goals Tracker
+    </text>
+    
+    <!-- Tagline -->
+    <text x="400" y="270" font-family="Arial, sans-serif" font-size="36" fill="white" opacity="0.95">
+      Transform your dreams into achievable milestones
+    </text>
+    
+    <!-- Description -->
+    <text x="400" y="340" font-family="Arial, sans-serif" font-size="24" fill="white" opacity="0.85">
+      A comprehensive goal tracking application to help you
+    </text>
+    <text x="400" y="375" font-family="Arial, sans-serif" font-size="24" fill="white" opacity="0.85">
+      set, track, and achieve your personal and professional goals.
+    </text>
+  </g>
+  
+  <!-- Features Section -->
+  <g opacity="0.9">
+    <!-- Feature 1 -->
+    <g transform="translate(400, 440)">
+      <circle cx="0" cy="0" r="30" fill="rgba(255,255,255,0.2)"/>
+      <text x="0" y="10" font-size="30" text-anchor="middle">🎯</text>
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="600">Goal Tracking</text>
+    </g>
+    
+    <!-- Feature 2 -->
+    <g transform="translate(580, 440)">
+      <circle cx="0" cy="0" r="30" fill="rgba(255,255,255,0.2)"/>
+      <text x="0" y="10" font-size="30" text-anchor="middle">📈</text>
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="600">Progress Analytics</text>
+    </g>
+    
+    <!-- Feature 3 -->
+    <g transform="translate(760, 440)">
+      <circle cx="0" cy="0" r="30" fill="rgba(255,255,255,0.2)"/>
+      <text x="0" y="10" font-size="30" text-anchor="middle">🔒</text>
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="600">Secure & Private</text>
+    </g>
+    
+    <!-- Feature 4 -->
+    <g transform="translate(940, 440)">
+      <circle cx="0" cy="0" r="30" fill="rgba(255,255,255,0.2)"/>
+      <text x="0" y="10" font-size="30" text-anchor="middle">📱</text>
+      <text x="0" y="60" font-family="Arial, sans-serif" font-size="16" fill="white" text-anchor="middle" font-weight="600">Responsive Design</text>
+    </g>
+  </g>
+  
+  <!-- Footer -->
+  <g opacity="0.8">
+    <text x="600" y="580" font-family="Arial, sans-serif" font-size="18" fill="white" text-anchor="middle">
+      github.com/23f3004176/life-goals-tracker
+    </text>
+  </g>
+  
+  <!-- Decorative Elements -->
+  <g opacity="0.5">
+    <!-- Stars -->
+    <path d="M 350,100 L 352,105 L 357,105 L 353,108 L 355,113 L 350,110 L 345,113 L 347,108 L 343,105 L 348,105 Z" fill="white"/>
+    <path d="M 1050,450 L 1052,455 L 1057,455 L 1053,458 L 1055,463 L 1050,460 L 1045,463 L 1047,458 L 1043,455 L 1048,455 Z" fill="white"/>
+    <path d="M 950,150 L 952,155 L 957,155 L 953,158 L 955,163 L 950,160 L 945,163 L 947,158 L 943,155 L 948,155 Z" fill="white"/>
+  </g>
+</svg>
