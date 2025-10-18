@@ -1,0 +1,53 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="grad2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="95" fill="url(#grad1)" opacity="0.1"/>
+  
+  <!-- Outer Ring -->
+  <circle cx="100" cy="100" r="85" fill="none" stroke="url(#grad1)" stroke-width="3" opacity="0.3"/>
+  
+  <!-- Target Symbol -->
+  <circle cx="100" cy="100" r="70" fill="none" stroke="url(#grad1)" stroke-width="4"/>
+  <circle cx="100" cy="100" r="50" fill="none" stroke="url(#grad1)" stroke-width="4"/>
+  <circle cx="100" cy="100" r="30" fill="none" stroke="url(#grad2)" stroke-width="4"/>
+  
+  <!-- Center Bullseye -->
+  <circle cx="100" cy="100" r="15" fill="url(#grad2)"/>
+  
+  <!-- Arrow/Dart -->
+  <g transform="translate(100, 40) rotate(0, 0, 0)">
+    <!-- Arrow shaft -->
+    <rect x="-2" y="0" width="4" height="40" fill="url(#grad2)" rx="2"/>
+    
+    <!-- Arrow head -->
+    <path d="M 0,-10 L 8,0 L 0,3 L -8,0 Z" fill="url(#grad2)"/>
+    
+    <!-- Arrow fletching -->
+    <path d="M -6,35 L 0,32 L 6,35" fill="none" stroke="url(#grad2)" stroke-width="2"/>
+  </g>
+  
+  <!-- Checkmark in center (achievement symbol) -->
+  <g transform="translate(100, 100)">
+    <path d="M -5,0 L -2,5 L 8,-8" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  
+  <!-- Decorative stars for achievement -->
+  <g opacity="0.7">
+    <path d="M 35,35 L 37,40 L 42,40 L 38,43 L 40,48 L 35,45 L 30,48 L 32,43 L 28,40 L 33,40 Z" fill="url(#grad2)"/>
+    <path d="M 165,35 L 167,40 L 172,40 L 168,43 L 170,48 L 165,45 L 160,48 L 162,43 L 158,40 L 163,40 Z" fill="url(#grad2)"/>
+    <path d="M 35,165 L 37,170 L 42,170 L 38,173 L 40,178 L 35,175 L 30,178 L 32,173 L 28,170 L 33,170 Z" fill="url(#grad2)"/>
+  </g>
+  
+  <!-- Text Path (optional) -->
+  <text x="100" y="190" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="url(#grad1)" text-anchor="middle">GOALS</text>
+</svg>
