@@ -38,7 +38,7 @@ function App() {
   if (loading) {
     return (
       <div className="loading-container">
-        <h1>Loading...</h1>
+        Loading...
       </div>
     );
   }
@@ -47,7 +47,7 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Life Goals Tracker</h1>
+          Life Goals Tracker
           {user && (
             <nav>
               <button onClick={() => auth.signOut()}>Logout</button>
