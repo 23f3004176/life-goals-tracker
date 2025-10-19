@@ -16,11 +16,8 @@ function App() {
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       if (currentUser) {
-        // Check if user is admin
         try {
           const idToken = await currentUser.getIdToken();
-          // Check custom claims or database for admin status
-          // For simplicity, we'll check email or use a database lookup
           setIsAdmin(currentUser.email === 'admin@example.com');
         } catch (error) {
           console.error('Error checking admin status:', error);
@@ -31,14 +28,13 @@ function App() {
       setUser(currentUser);
       setLoading(false);
     });
-
     return () => unsubscribe();
   }, []);
 
   if (loading) {
     return (
       <div className="loading-container">
-        Loading...
+        <h1>Loading...</h1>
       </div>
     );
   }
@@ -47,46 +43,45 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          Life Goals Tracker
+          <h1>Life Goals Tracker</h1>
           {user && (
             <nav>
               <button onClick={() => auth.signOut()}>Logout</button>
             </nav>
           )}
         </header>
-        
         <main className="main-content">
           <Routes>
             {/* Public routes */}
-            <Route 
-              path="/login" 
-              element={user ? <Navigate to={isAdmin ? '/admin' : '/dashboard'} /> : <Login />} 
+            <Route
+              path="/login"
+              element={user ? <Navigate to={isAdmin ? '/admin' : '/dashboard'} /> : <Login />}
             />
-            <Route 
-              path="/register" 
-              element={user ? <Navigate to={isAdmin ? '/admin' : '/dashboard'} /> : <Register />} 
+            <Route
+              path="/register"
+              element={user ? <Navigate to={isAdmin ? '/admin' : '/dashboard'} /> : <Register />}
             />
-            
+
             {/* Protected routes */}
-            <Route 
-              path="/dashboard" 
-              element={user && !isAdmin ? <Dashboard /> : <Navigate to="/login" />} 
+            <Route
+              path="/dashboard"
+              element={user && !isAdmin ? <Dashboard /> : <Navigate to="/login" />}
             />
-            <Route 
-              path="/admin" 
-              element={user && isAdmin ? <AdminDashboard /> : <Navigate to="/login" />} 
+            <Route
+              path="/admin"
+              element={user && isAdmin ? <AdminDashboard /> : <Navigate to="/login" />}
             />
-            
+
             {/* Default route */}
-            <Route 
-              path="/" 
+            <Route
+              path="/"
               element={
                 user ? (
                   <Navigate to={isAdmin ? '/admin' : '/dashboard'} />
                 ) : (
                   <Navigate to="/login" />
                 )
-              } 
+              }
             />
           </Routes>
         </main>
