@@ -47,29 +47,46 @@ function App() {
     <Router>
       <div className="App">
         <header className="App-header">
-          <h1>Life Goals Tracker 🎯</h1>
+          <h1>Life Goals Tracker</h1>
+          {user && (
+            <nav>
+              <button onClick={() => auth.signOut()}>Logout</button>
+            </nav>
+          )}
         </header>
-        <main>
+        
+        <main className="main-content">
           <Routes>
-            <Route
-              path="/"
+            {/* Public routes */}
+            <Route 
+              path="/login" 
+              element={user ? <Navigate to={isAdmin ? '/admin' : '/dashboard'} /> : <Login />} 
+            />
+            <Route 
+              path="/register" 
+              element={user ? <Navigate to={isAdmin ? '/admin' : '/dashboard'} /> : <Register />} 
+            />
+            
+            {/* Protected routes */}
+            <Route 
+              path="/dashboard" 
+              element={user && !isAdmin ? <Dashboard /> : <Navigate to="/login" />} 
+            />
+            <Route 
+              path="/admin" 
+              element={user && isAdmin ? <AdminDashboard /> : <Navigate to="/login" />} 
+            />
+            
+            {/* Default route */}
+            <Route 
+              path="/" 
               element={
                 user ? (
-                  isAdmin ? <Navigate to="/admin" replace /> : <Navigate to="/dashboard" replace />
+                  <Navigate to={isAdmin ? '/admin' : '/dashboard'} />
                 ) : (
-                  <Navigate to="/login" replace />
+                  <Navigate to="/login" />
                 )
-              }
-            />
-            <Route path="/login" element={!user ? <Login /> : <Navigate to="/" replace />} />
-            <Route path="/register" element={!user ? <Register /> : <Navigate to="/" replace />} />
-            <Route
-              path="/dashboard"
-              element={user && !isAdmin ? <Dashboard /> : <Navigate to="/" replace />}
-            />
-            <Route
-              path="/admin"
-              element={user && isAdmin ? <AdminDashboard /> : <Navigate to="/" replace />}
+              } 
             />
           </Routes>
         </main>
